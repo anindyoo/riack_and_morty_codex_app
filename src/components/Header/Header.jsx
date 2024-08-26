@@ -1,3 +1,5 @@
+import usePageStore from '../../store/pageStore';
+
 const HeaderButton = (props) => {
   const { name } = props;
 
@@ -14,7 +16,7 @@ const HeaderButton = (props) => {
 };
 
 const Header = () => {
-  console.log();
+  const { detailIsActive } = usePageStore();
 
   return (
     <div className="
@@ -26,7 +28,13 @@ const Header = () => {
     border border-red-500
     bg-blue-200"
     >
-      <HeaderButton name="back" />
+      {
+        detailIsActive
+          ? <HeaderButton name="back" />
+          : (
+            <div className="BACK-BUTTON-BUFFER w-12" />
+          )
+      }
       <div>APP TITLE</div>
       <HeaderButton name="info" />
     </div>
