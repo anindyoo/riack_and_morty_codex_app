@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Rick & Morty Characters App",
+  "name": "React app created by Muhammad Anindyo Poetra Mufatyta as a solution for the technical test as a Application Developer Intern at Mostrans.",
   "icons": [
     {
       "src": "favicon.ico",
