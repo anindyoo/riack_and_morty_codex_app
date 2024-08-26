@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.UNIVERSAL-CONTAINER {
+  @apply w-[100%] max-w-[30rem]
+}
