@@ -28,7 +28,7 @@ const CharacterDetail = () => {
       <img
         src={charData?.image}
         alt={charData?.name}
-        className="border border-neutral-400 shadow-md"
+        className="border border-slimyGreen shadow-md"
       />
       <div className="
       CHARACTER-DETAIL
