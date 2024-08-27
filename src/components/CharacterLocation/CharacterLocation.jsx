@@ -1,5 +1,5 @@
 const CharacterLocation = (props) => {
-  const { detail } = props;
+  const { location, detail } = props;
 
   return (
     <div className="
@@ -15,7 +15,7 @@ const CharacterLocation = (props) => {
       ${detail ? 'text-xl' : 'text-lg'}
       font-medium text-zinc-700`}
       >
-        Location
+        {location || 'Unassigned'}
       </div>
     </div>
   );

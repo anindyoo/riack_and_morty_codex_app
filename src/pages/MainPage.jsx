@@ -1,14 +1,21 @@
 import { useEffect } from 'react';
 import usePageStore from '../store/pageStore';
 import AllCharacters from './AllCharacters';
-import ByLocation from './ByLocation';
+import ByLocation from './AllLocations';
 
 const MainPage = () => {
-  const { activePage, setDetailStatus } = usePageStore();
+  const {
+    activePage,
+    setActivePage,
+    setDetailStatus,
+  } = usePageStore();
 
   useEffect(() => {
+    if (activePage === '') {
+      setActivePage('all');
+    }
     setDetailStatus(false);
-  }, [setDetailStatus]);
+  }, [activePage, setActivePage, setDetailStatus]);
 
   return (
     <div className="

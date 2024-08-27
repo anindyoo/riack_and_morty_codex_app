@@ -4,14 +4,19 @@ import useCharacterStore from '../store/characterStore';
 import CharacterBio from '../components/CharacterBio/CharacterBio';
 import CharacterLocation from '../components/CharacterLocation/CharacterLocation';
 import usePageStore from '../store/pageStore';
+import AssignLocation from '../components/AssignLocation/AssignLocation';
+import useLocationStore from '../store/locationStore';
 
 const CharacterDetail = () => {
   const { characterId } = useParams();
   const { characters } = useCharacterStore();
   const { setDetailStatus } = usePageStore();
+  const { locations } = useLocationStore();
 
   const charsData = characters?.characters?.results;
   const charData = charsData && charsData?.filter((char) => char.id === characterId)[0];
+
+  const charLocation = locations && locations.filter((loc) => loc.characterId === characterId)[0];
 
   useEffect(() => {
     setDetailStatus(true);
@@ -40,7 +45,7 @@ const CharacterDetail = () => {
         >
           {charData?.name}
         </div>
-        <CharacterLocation detail />
+        <CharacterLocation location={charLocation?.location} detail />
         <div className="
         CHARACTER-SUBDETAIL-CONTAINER
         flex flex-col gap-2
@@ -52,6 +57,10 @@ const CharacterDetail = () => {
           <CharacterBio gender={charData?.gender} detail />
         </div>
       </div>
+      <AssignLocation
+        characterId={charData?.id}
+        disabled={!!charLocation}
+      />
     </div>
   );
 };

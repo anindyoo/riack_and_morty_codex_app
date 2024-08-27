@@ -5,6 +5,7 @@ import Main from './layouts/Main';
 import MainPage from './pages/MainPage';
 import useCharacterStore from './store/characterStore';
 import CharacterDetail from './pages/CharacterDetail';
+import AllCharactersByLocation from './pages/AllCharactersByLocation';
 
 const GET_CHARACTERS = gql`
   query GetCharacters {
@@ -38,6 +39,10 @@ const App = () => {
           path: '/:characterId',
           element: <CharacterDetail />,
         },
+        {
+          path: '/location/:location',
+          element: <AllCharactersByLocation />,
+        },
       ],
     },
   ];
@@ -53,7 +58,23 @@ const App = () => {
     }
   }, [data, setCharacters]);
 
-  if (loading) return 'LOADING.';
+  if (loading) {
+    return (
+      <div className="
+      LOADING
+      fixed top-0 left-0
+      flex flex-col justify-center items-center
+      h-screen w-screen"
+      >
+        <div className="animate-spin">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+        </div>
+        <div>Loading...</div>
+      </div>
+    );
+  }
   if (error) return error.message;
   return (
     <div className="

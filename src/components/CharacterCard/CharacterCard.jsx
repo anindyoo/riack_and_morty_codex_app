@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
 import CharacterBio from '../CharacterBio/CharacterBio';
 import CharacterLocation from '../CharacterLocation/CharacterLocation';
+import useLocationStore from '../../store/locationStore';
 
 const CharacterCard = (props) => {
   const { charData } = props;
+  const { locations } = useLocationStore();
+
+  const charLocation = locations && locations.filter((loc) => loc.characterId === charData?.id)[0];
 
   return (
     <Link
@@ -37,7 +41,7 @@ const CharacterCard = (props) => {
           >
             {charData?.name}
           </div>
-          <CharacterLocation />
+          <CharacterLocation location={charLocation?.location} />
           <div className="
           CHARACTER-SUB-DETAIL
           flex flex-row gap-4
