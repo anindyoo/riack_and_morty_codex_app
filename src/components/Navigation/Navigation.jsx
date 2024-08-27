@@ -34,7 +34,7 @@ const Navigation = () => {
     NAVIGATION
     UNIVERSAL-CONTAINER
     flex flex-row justify-evenly
-    fixed bottom-0
+    fixed bottom-0 z-50
     h-20
     px-4 py-3
     border
