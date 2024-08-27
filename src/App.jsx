@@ -52,7 +52,11 @@ const App = () => {
     },
   ];
 
-  const router = createBrowserRouter(routes);
+  const routeConfig = {
+    basename: '/rick_and_morty_codex_app',
+  };
+
+  const router = createBrowserRouter(routes, routeConfig);
 
   const { setCharacters } = useCharacterStore();
   const { loading, error, data } = useQuery(GET_CHARACTERS);
