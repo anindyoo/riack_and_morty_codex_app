@@ -1,0 +1,25 @@
+{
+  "short_name": "Rick & Morty Characters App",
+  "name": "React app created by Muhammad Anindyo Poetra Mufatyta as a solution for the technical test as a Application Developer Intern at Mostrans.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
