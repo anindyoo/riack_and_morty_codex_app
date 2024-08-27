@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
 import { useEffect } from 'react';
 import Main from './layouts/Main';
@@ -56,7 +56,7 @@ const App = () => {
     basename: '/rick_and_morty_codex_app',
   };
 
-  const router = createBrowserRouter(routes, routeConfig);
+  const router = createHashRouter(routes, routeConfig);
 
   const { setCharacters } = useCharacterStore();
   const { loading, error, data } = useQuery(GET_CHARACTERS);
