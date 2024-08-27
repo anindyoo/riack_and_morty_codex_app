@@ -6,6 +6,7 @@ import MainPage from './pages/MainPage';
 import useCharacterStore from './store/characterStore';
 import CharacterDetail from './pages/CharacterDetail';
 import AllCharactersByLocation from './pages/AllCharactersByLocation';
+import Info from './pages/Info';
 
 const GET_CHARACTERS = gql`
   query GetCharacters {
@@ -42,6 +43,10 @@ const App = () => {
         {
           path: '/location/:location',
           element: <AllCharactersByLocation />,
+        },
+        {
+          path: '/info',
+          element: <Info />,
         },
       ],
     },

@@ -6,7 +6,7 @@ const HeaderButton = (props) => {
 
   return (
     <Link
-      to="/"
+      to={name === 'info' ? '/info' : '/'}
       className={`
       ${name}-BUTTON
       flex justify-center
