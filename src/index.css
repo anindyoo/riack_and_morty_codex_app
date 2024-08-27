@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-optical-sizing: auto;
+  @apply font-encodeSans
+}
+
 .UNIVERSAL-CONTAINER {
   @apply w-[100%] max-w-[30rem]
+}
+
+.text-stroke {
+  -webkit-text-stroke: 0.05rem theme('colors.slimyGreen');
 }

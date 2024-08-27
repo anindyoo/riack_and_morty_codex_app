@@ -9,7 +9,8 @@ const MainPage = () => {
     <div className="
     MAIN-PAGE
     UNIVERSAL-CONTAINER
-    min-h-screen"
+    min-h-screen
+    px-4 pt-24 pb-32"
     >
       {activePage === 'all'
         ? <AllCharacters />

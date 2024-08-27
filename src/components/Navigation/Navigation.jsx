@@ -35,7 +35,8 @@ const Navigation = () => {
     flex flex-row justify-evenly
     fixed bottom-0
     h-20
-    border"
+    border
+    bg-white"
     >
       <NavButton
         id="all"

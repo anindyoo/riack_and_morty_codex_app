@@ -8,9 +8,19 @@ const HeaderButton = (props) => {
       type="button"
       className={`
       ${name}-BUTTON
-      w-12 border`}
+      flex justify-center
+      w-12`}
     >
-      {name}
+      {name === 'info'
+        ? (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+          </svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+        )}
     </button>
   );
 };
@@ -22,11 +32,12 @@ const Header = () => {
     <div className="
     HEADER
     UNIVERSAL-CONTAINER
-    h-16
-    flex flex-row justify-between items-center
     fixed top-0
-    border border-red-500
-    bg-blue-200"
+    flex flex-row justify-between items-center
+    h-16
+    px-2
+    bg-white
+    shadow-md"
     >
       {
         detailIsActive
@@ -35,7 +46,7 @@ const Header = () => {
             <div className="BACK-BUTTON-BUFFER w-12" />
           )
       }
-      <div>APP TITLE</div>
+      <div className="APP-TITLE font-creepster text-2xl text-lightBlue text-stroke">RICK & MORTY CODEX</div>
       <HeaderButton name="info" />
     </div>
   );
