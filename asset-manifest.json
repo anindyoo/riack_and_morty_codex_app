@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/anindyoo/rick_and_morty_codex_app/static/css/main.113816d5.css",
-    "main.js": "/anindyoo/rick_and_morty_codex_app/static/js/main.32a1fd91.js",
+    "main.js": "/anindyoo/rick_and_morty_codex_app/static/js/main.8ab456dd.js",
     "index.html": "/anindyoo/rick_and_morty_codex_app/index.html",
     "main.113816d5.css.map": "/anindyoo/rick_and_morty_codex_app/static/css/main.113816d5.css.map",
-    "main.32a1fd91.js.map": "/anindyoo/rick_and_morty_codex_app/static/js/main.32a1fd91.js.map"
+    "main.8ab456dd.js.map": "/anindyoo/rick_and_morty_codex_app/static/js/main.8ab456dd.js.map"
   },
   "entrypoints": [
     "static/css/main.113816d5.css",
-    "static/js/main.32a1fd91.js"
+    "static/js/main.8ab456dd.js"
   ]
 }
