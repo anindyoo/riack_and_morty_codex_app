@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom';
 import usePageStore from '../../store/pageStore';
 
 const HeaderButton = (props) => {
   const { name } = props;
 
   return (
-    <button
-      type="button"
+    <Link
+      to="/"
       className={`
       ${name}-BUTTON
       flex justify-center
@@ -21,7 +22,7 @@ const HeaderButton = (props) => {
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
           </svg>
         )}
-    </button>
+    </Link>
   );
 };
 
@@ -46,7 +47,12 @@ const Header = () => {
             <div className="BACK-BUTTON-BUFFER w-12" />
           )
       }
-      <div className="APP-TITLE font-creepster text-2xl text-lightBlue text-stroke">RICK & MORTY CODEX</div>
+      <Link
+        to="/"
+        className="APP-TITLE font-creepster text-2xl text-lightBlue text-stroke"
+      >
+        RICK & MORTY CODEX
+      </Link>
       <HeaderButton name="info" />
     </div>
   );

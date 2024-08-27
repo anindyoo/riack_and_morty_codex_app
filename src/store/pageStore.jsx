@@ -4,8 +4,7 @@ const usePageStore = create((set) => ({
   activePage: 'all',
   detailIsActive: false,
   setActivePage: (id) => set({ activePage: id }),
-  setDetailToActive: () => set({ detailIsActive: true }),
-  setDetailToInactive: () => set({ detailIsActive: false }),
+  setDetailStatus: (status) => set({ detailIsActive: status }),
 }));
 
 export default usePageStore;

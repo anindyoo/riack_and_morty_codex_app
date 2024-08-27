@@ -1,4 +1,5 @@
 import usePageStore from '../../store/pageStore';
+import AssignLocation from '../AssignLocation/AssignLocation';
 
 const NavButton = (props) => {
   const { id, text, classname } = props;
@@ -26,7 +27,7 @@ const NavButton = (props) => {
 };
 
 const Navigation = () => {
-  console.log();
+  const { detailIsActive } = usePageStore();
 
   return (
     <nav className="
@@ -35,19 +36,26 @@ const Navigation = () => {
     flex flex-row justify-evenly
     fixed bottom-0
     h-20
+    px-4 py-3
     border
     bg-white"
     >
-      <NavButton
-        id="all"
-        text="All Characters"
-        classname="ALL-CHARACTERS"
-      />
-      <NavButton
-        id="location"
-        text="By Location"
-        classname="BY-LOCATION"
-      />
+      {detailIsActive
+        ? (<AssignLocation />)
+        : (
+          <>
+            <NavButton
+              id="all"
+              text="All Characters"
+              classname="ALL-CHARACTERS"
+            />
+            <NavButton
+              id="location"
+              text="By Location"
+              classname="BY-LOCATION"
+            />
+          </>
+        )}
     </nav>
   );
 };

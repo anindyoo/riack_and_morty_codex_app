@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Main from './layouts/Main';
 import MainPage from './pages/MainPage';
 import useCharacterStore from './store/characterStore';
+import CharacterDetail from './pages/CharacterDetail';
 
 const GET_CHARACTERS = gql`
   query GetCharacters {
@@ -32,6 +33,10 @@ const App = () => {
         {
           path: '/',
           element: <MainPage />,
+        },
+        {
+          path: '/:characterId',
+          element: <CharacterDetail />,
         },
       ],
     },
